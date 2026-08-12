@@ -1,0 +1,277 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
+
+body {
+  min-height: 100vh;
+
+  font-family: Arial, sans-serif;
+
+  background:
+    radial-gradient(circle at 20% 20%, #123b25 0%, transparent 35%),
+    radial-gradient(circle at 80% 80%, #0b2d1b 0%, transparent 35%), #050807;
+
+  color: white;
+
+  padding: 50px 20px;
+}
+
+/* Main container */
+
+.seeds-container {
+  width: 100%;
+  max-width: 850px;
+
+  margin: auto;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 45px;
+}
+
+/* Each seed */
+
+.seed-item {
+  width: 100%;
+}
+
+/* Glass card */
+
+.seed-card {
+  width: 100%;
+
+  overflow: hidden;
+
+  background: rgba(255, 255, 255, 0.07);
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  border-radius: 24px;
+
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+
+  box-shadow: 0 0 30px rgba(55, 255, 130, 0.08);
+
+  transition: 0.3s ease;
+}
+
+.seed-card:hover {
+  transform: translateY(-5px);
+
+  box-shadow: 0 0 40px rgba(55, 255, 130, 0.18);
+}
+
+/* Image */
+/*
+  Image size is controlled
+  inside HTML for each image.
+*/
+
+.seed-card img {
+  object-fit: contain;
+
+  display: block;
+}
+
+/* Description */
+
+.seed-description {
+  padding: 25px;
+}
+
+.seed-description h2 {
+  font-size: 25px;
+
+  margin-bottom: 10px;
+
+  color: #ffffff;
+}
+
+.seed-description p {
+  color: #b9c7bf;
+
+  font-size: 16px;
+
+  line-height: 1.7;
+}
+
+/* Seed information */
+
+.seed-info {
+  margin-top: 12px;
+
+  width: 100%;
+
+  min-height: 90px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 15px;
+
+  padding: 15px 18px;
+
+  background: rgba(255, 255, 255, 0.06);
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  border-radius: 18px;
+
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+}
+
+/* Seed + Version */
+
+.seed-details {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 7px;
+}
+
+.seed-details p {
+  color: #c9d2cd;
+
+  font-size: 15px;
+}
+
+.seed-details span {
+  color: #ffed4b;
+
+  font-weight: bold;
+}
+
+/* Copy button */
+
+.copy-btn {
+  border: none;
+
+  outline: none;
+
+  padding: 14px 23px;
+
+  border-radius: 12px;
+
+  background: #85f8b3;
+
+  color: #041108;
+
+  font-size: 15px;
+
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: 0.25s ease;
+}
+
+.copy-btn:hover {
+  background: #63f79b;
+
+  transform: scale(1.05);
+}
+
+.copy-btn:active {
+  transform: scale(0.95);
+}
+
+/* Copy message */
+
+.copy-message {
+  position: fixed;
+
+  bottom: 25px;
+
+  left: 50%;
+
+  transform: translateX(-50%) translateY(20px);
+
+  padding: 12px 20px;
+
+  background: rgba(20, 30, 24, 0.9);
+
+  border: 1px solid rgba(100, 255, 150, 0.3);
+
+  border-radius: 12px;
+
+  color: #5aeeff;
+
+  opacity: 0;
+
+  pointer-events: none;
+
+  transition: 0.3s ease;
+
+  backdrop-filter: blur(10px);
+}
+
+.copy-message.show {
+  opacity: 1;
+
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+  body {
+    padding: 25px 12px;
+  }
+
+  .seeds-container {
+    gap: 30px;
+  }
+
+  .seed-card {
+    border-radius: 18px;
+  }
+
+  .seed-card img {
+    width: 100%;
+
+    object-fit: contain;
+
+    display: block;
+  }
+
+  .seed-description {
+    padding: 20px;
+  }
+
+  .seed-description h2 {
+    font-size: 21px;
+  }
+
+  .seed-description p {
+    font-size: 14px;
+  }
+
+  .seed-info {
+    min-height: 80px;
+
+    padding: 12px;
+
+    border-radius: 15px;
+  }
+
+  .seed-details p {
+    font-size: 13px;
+  }
+
+  .copy-btn {
+    padding: 12px 16px;
+
+    font-size: 13px;
+  }
+}
